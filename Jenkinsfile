@@ -40,14 +40,7 @@ pipeline {
                 
             }
         }
-    }
-    stage('Scale service'){
-      steps{
-        script{
-          scaleApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT_2)
-        }
-      }
-    }
+   }
     
   }
 }
@@ -62,12 +55,4 @@ def runApp(containerName, tag, dockerHubUser, httpPort)
   
   
 }
-      def scaleApp(containerName, tag, dockerHubUser, httpPort){
-        sh label: ' ',script: 'ssh ubuntu@54.188.134.172 docker pull vashi9/ci-cd'
-        sh label: ' ',script: 'ssh ubuntu@54.188.134.172 docker stop ci-cd_container'
-        sh label: ' ',script: 'ssh ubuntu@54.188.134.172 docker run -d --rm --name ci-cd_container -p 5004:5004 vashi9/ci-cd'
-        sh label: ' ',script: 'ssh -i "/id_rsa2" ubuntu@34.208.7.11 sudo docker pull vashi9/ci-cd '
-         sh label: ' ',script: 'ssh -i "/id_rsa2" ubuntu@34.208.7.11 sudo docker stop ci-cd_container'
-        sh label: ' ',script: 'ssh -i "/id_rsa2" ubuntu@34.208.7.11 sudo docker run -d --rm --name ci-cd_container -p 5004:5004 vashi9/ci-cd'
-       
-      }
+    
