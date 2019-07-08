@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/vashi9/node-js-app.git'
+        git 'git@github.com:vashi9/node-mongo-app.git'
       }
     }
     stage('Building image') {
