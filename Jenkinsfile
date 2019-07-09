@@ -46,13 +46,7 @@ pipeline {
   }
 }
 def runApp(containerName, tag, dockerHubUser, httpPort){
-     sh "docker pull $dockerHubUser/$containerName"
-     /*sh "docker service rm ci-cd"*/
-     sh "docker node update --availability drain ip-172-31-42-182"
-    /*sh "docker service create --name mongo --replicas 2 --publish 5006:27017 mongo"
-     sh "docker service create --name node-mongo --replicas 4 --publish ${httpPort}:${httpPort} vashi9/node-mongo"8 
-    sh "docker stack deploy --compose-file docker-stack.yml stackdemo" */
-    sh "docker-compose up"
+     
   
      
      
