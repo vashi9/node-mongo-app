@@ -1,12 +1,13 @@
 version: '3'
 services:
- mongo:
-    image: mongo
-    ports:
-      - '5006:27017'
   app:
     image: vashi9/node-mongo
     ports:
-      - '5005:5005'
+      - '5005:3000'
+  mongo:
+    image: mongo
+    ports:
+      - '5006:27017'      
+      
     
   
