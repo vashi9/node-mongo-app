@@ -46,6 +46,7 @@ pipeline {
   }
 }
 def runApp(containerName, tag, dockerHubUser, httpPort){
+  sh "docker-compose up"
      
   
      
