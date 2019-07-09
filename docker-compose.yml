@@ -1,23 +1,16 @@
-version: '2'
+version: '3'
 services:
   app:
     container_name: docker-node-mongo
     restart: always
-    image: vashi9/nod-mongo
+    build: .
     ports:
-      - '5005:3000'
-    link:
+      - '5005:5005'
+    links:
       - mongo
-    /*deploy:
-      mode: replicated
-      replicas: 3 /*
-
   mongo:
     container_name: mongo
     image: mongo
     ports:
       - '5006:27017'
-    deploy:
-      mode: replicated
-      replicas: 3   
-      
+© 2019 GitHub, Inc.
