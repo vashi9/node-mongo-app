@@ -38,7 +38,7 @@ pipeline {
         steps{
             script{
               	sh "docker stack deploy --compose-file=docker-compose.yml node-mongo"
-                sh "docker service scale node-mongo=3"
+                sh "docker service scale node-mongo_app=3"
                 
             }
         }
