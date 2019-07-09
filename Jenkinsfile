@@ -37,7 +37,8 @@ pipeline {
    stage('Run service'){
         steps{
             script{
-                runApp(CONTAINER_NAME, CONTAINER_TAG, DOCKER_HUB_USER, HTTP_PORT)
+              	sh "docker stack deploy --compose-file=docker-compose.yml node-mongo"
+                sh "docker service scale node-mongo=3"
                 
             }
         }
@@ -45,11 +46,5 @@ pipeline {
     
   }
 }
-def runApp(containerName, tag, dockerHubUser, httpPort){
-  sh "docker-compose up"
-     
-  
-     
-     
-}
+
     
