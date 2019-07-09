@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Connect to MongoDB
 mongoose
   .connect(
-    'mongodb://mongo:5006/docker-node-mongo',
+    'mongodb://mongo:27017/docker-node-mongo',
     { useNewUrlParser: true }
   )
   .then(() => console.log('MongoDB Connected'))
@@ -33,6 +33,6 @@ app.post('/item/add', (req, res) => {
   newItem.save().then(item => res.redirect('/'));
 });
 
-const port = 5005;
+const port = 5006;
 
 app.listen(port, () => console.log('Server running...'));
