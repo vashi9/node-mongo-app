@@ -14,7 +14,8 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'git@github.com:vashi9/node-mongo-app.git'
+         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'new-key-2', url: 'git@github.com:vashi9/node-mongo-app.git']]])
+        /*git 'git@github.com:vashi9/node-mongo-app.git'*/
       }
     }
     stage('Building image') {
