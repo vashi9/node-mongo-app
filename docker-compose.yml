@@ -1,16 +1,12 @@
 version: '3'
 services:
-  app:
-    container_name: docker-node-mongo
-    restart: always
-    build: .
-    ports:
-      - '5005:5005'
-    links:
-      - mongo
-  mongo:
-    container_name: mongo
+ mongo:
     image: mongo
     ports:
       - '5006:27017'
-© 2019 GitHub, Inc.
+  app:
+    image: vashi9/node-mongo
+    ports:
+      - '5005:5005'
+    
+  
