@@ -6,7 +6,7 @@ services:
     image: vashi9/nod-mongo
     ports:
       - '5005:3000'
-    links:
+    depends_on:
       - mongo
     deploy:
       mode: replicated
